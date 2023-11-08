@@ -134,3 +134,30 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.alert-danger {
+  text-transform: capitalize;
+  color: var(--error-bg-color) !important;
+  background: none !important;
+  margin-bottom: 1.25rem;
+}
+
+.form-fail-notification{
+  color: var(--error-color) !important;
+  background: var(--alert-bg) !important;
+  margin-bottom: 1.25rem;
+  width: 100%;
+  border: 1px solid var(--bs-alert-border-color);
+  padding: 1rem;
+  border-radius: .625rem;
+}
+
+.loading-spinner{
+  width: 20px;
+  height: 20px;
+  background-image: url('/assets/images/spinner-loading.svg');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: contain;
+  display: inline-block;
+}
