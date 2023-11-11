@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-login-form',
@@ -21,6 +22,7 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private _auth: AuthService,
+    private _store: StoreService,
     private router: Router
   ) {}
 
@@ -40,7 +42,7 @@ export class LoginFormComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       let user = this._auth.checkUserExist(this.loginForm.value);
-      user ? console.log(user.accessLevel) : (this.failedLogin = true);
+      user ? this._store.userLogin(user) : (this.failedLogin = true);
       this.loading = false;
     }, 1000);
   }
