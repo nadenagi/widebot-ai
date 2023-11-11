@@ -8,14 +8,22 @@ import { LoginFormComponent } from './pages/login/login-form/login-form.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { AdminModule } from './pages/dashboard/admin.module';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, LoginFormComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    LoginFormComponent,
+    NavbarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AdminModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

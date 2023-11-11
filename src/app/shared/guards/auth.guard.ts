@@ -1,7 +1,8 @@
-import { CanActivate, Router, CanActivateChild } from '@angular/router';
+import { CanActivate, Router, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgxPermissionsService } from 'ngx-permissions';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
@@ -11,16 +12,16 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     private permissionsService: NgxPermissionsService
   ) {}
 
-  canActivate(): Promise<boolean> {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean | UrlTree> {
     return new Promise((resolve) => {
       this._auth
         .getProfile()
         .then(async (data: any) => {
           await this.permissionsService.flushPermissions();
-
+  
           let user = data.data;
           await this.permissionsService.addPermission([data.accessLevel]);
-
+  
           resolve(true);
         })
         .catch(function (error) {
