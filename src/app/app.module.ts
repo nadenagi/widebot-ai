@@ -9,9 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './pages/dashboard/admin.module';
-import { PagesComponent } from './pages/pages.component';
 import { AuthGuard } from './shared/guards/auth.guard';
-import { NgxPermissionsModule, NgxPermissionsService } from 'ngx-permissions';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, LoginFormComponent],
@@ -21,7 +21,7 @@ import { NgxPermissionsModule, NgxPermissionsService } from 'ngx-permissions';
     ReactiveFormsModule,
     HttpClientModule,
     AdminModule,
-    PagesComponent,
+    PagesModule,
   ],
   providers: [
     AuthService,
