@@ -23,7 +23,20 @@ const routes: Routes = [
           title: 'admin',
           permissions: {
             only: ['admin'],
-            redirectTo: '/pages',
+            redirectTo: '/login',
+          },
+        },
+        canActivate: [ngxPermissionsGuard],
+      },
+      {
+        path: 'user',
+        loadChildren: () =>
+          import('./pages/user/user.module').then((m) => m.UserModule),
+        data: {
+          title: 'user',
+          permissions: {
+            only: ['user', 'admin'],
+            redirectTo: '/login',
           },
         },
         canActivate: [ngxPermissionsGuard],
