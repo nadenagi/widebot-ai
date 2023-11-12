@@ -13,6 +13,8 @@ import { AuthGuard } from './shared/guards/auth.guard';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { PagesModule } from './pages/pages.module';
 import { UserService } from './services/users';
+import { TranslateLoader, TranslateModule } from  '@ngx-translate/core';
+import { TranslateHttpLoader } from  '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, LoginFormComponent],
