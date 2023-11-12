@@ -1,0 +1,14 @@
+<div class="actions-container">
+  <span class="action-button" title="add user" (click)="addUser()">
+    <i class="bi bi-person-fill-add"></i>
+  </span>
+  <span class="action-button" title="edit user" (click)="editUser()">
+    <i class="bi bi-pencil-square"></i>
+  </span>
+  <span class="action-button" title="delete user" (click)="deleteUser()">
+    <i class="bi bi-trash3"></i>
+  </span>
+</div>
+
+<app-delete-user [selectedUser]="selectedUser" [showDeleteUserModal]="deleteUserModal" (closeSideBar)="deleteUserModal = false">
+</app-delete-user>

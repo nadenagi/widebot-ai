@@ -1,9 +1,10 @@
 <div class="action-table p-3">
   <div class="actions px-3">
     <div class="mb-3 row">
-      <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+      <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search with username:</label>
       <div class="col-xs-3 col-sm-auto">
-        <input id="table-complete-search" type="text" class="form-control" name="searchTerm" [(ngModel)]="userSearch" />
+        <input id="table-complete-search" type="text" class="form-control" name="searchTerm" [(ngModel)]="userSearch"
+          (change)="filterUsers()" />
       </div>
     </div>
 
@@ -43,7 +44,7 @@
           {{user.phone}}
         </td>
         <td>
-          {{user.email}}
+          <app-user-actions [selectedUser]="user"></app-user-actions>
         </td>
       </tr>
     </tbody>

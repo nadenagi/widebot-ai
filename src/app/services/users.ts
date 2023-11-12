@@ -11,11 +11,17 @@ export class UserService {
     let queryParams;
 
     if (filter) {
-      queryParams = new HttpParams().append('name', filter);
+      queryParams = new HttpParams().append('username', filter);
     }
 
     return this._HttpClient.get('https://jsonplaceholder.typicode.com/users', {
       params: queryParams,
     });
+  }
+
+  deleteUser(userID: number) {
+    this._HttpClient
+      .delete(`https://jsonplaceholder.typicode.com/users/${userID}`)
+      .subscribe(() => console.log('user deleted'));
   }
 }

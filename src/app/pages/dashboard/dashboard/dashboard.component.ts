@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/users';
 import { RawUsers } from 'src/app/shared/types/user';
@@ -14,6 +14,10 @@ export class DashboardComponent implements OnInit {
 
   constructor(private _user: UserService) {
     this.users$ = _user.getUsers() as Observable<RawUsers[]>;
+  }
+
+  filterUsers(): void{
+    this.users$ = this._user.getUsers(this.userSearch) as Observable<RawUsers[]>;
   }
 
   ngOnInit(): void {}
