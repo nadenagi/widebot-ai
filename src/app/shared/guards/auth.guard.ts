@@ -1,32 +1,31 @@
-import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+  Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgxPermissionsService } from 'ngx-permissions';
 
 @Injectable()
-export class AuthGuard  {
+export class AuthGuard {
   constructor(
     private router: Router,
     private _auth: AuthService,
     private permissionsService: NgxPermissionsService
   ) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean | UrlTree> {
-    return new Promise((resolve) => {
-      this._auth
-        .getProfile()
-        .then(async (data: any) => {
-          await this.permissionsService.flushPermissions();
-  
-          let user = data.data;
-          await this.permissionsService.addPermission([data.accessLevel]);
-  
-          resolve(true);
-        })
-        .catch(function (error) {
-          resolve(false);
-        });
-    });
+  canActivate(): boolean {
+    let user = this._auth.getProfile();
+    if (user) {
+      this.permissionsService.flushPermissions();
+      this.permissionsService.addPermission([user.accessLevel]);
+      return true;
+    } else {
+      this.permissionsService.flushPermissions();
+      return false;
+    }
   }
 
   canActivateChild() {

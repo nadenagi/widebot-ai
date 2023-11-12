@@ -5,7 +5,6 @@ import {
   loginUserValues,
 } from '../shared/types/user';
 import { StoreService } from './store.service';
-import { Observable } from 'rxjs';
 @Injectable()
 export class AuthService {
   predefinedUsers: usersPredefinedCredentials[] = [
@@ -22,7 +21,6 @@ export class AuthService {
   ];
 
   constructor(private _store: StoreService) {}
-
   checkUserExist(
     userCredentials: loginUserValues
   ): usersPredefinedCredentials | undefined {
@@ -34,13 +32,13 @@ export class AuthService {
     });
   }
 
-  getProfile(): Promise<usersPredefinedCredentials | undefined> {
-    let storedUser =
-      this._store.logedInUser.getValue() as Observable<usersPredefinedCredentials>;
-    return storedUser.toPromise();
+  getProfile(): usersPredefinedCredentials {
+    let storedUser = this._store.logedInUser
+      .value as usersPredefinedCredentials;
+    return storedUser;
   }
 
-  isAuthenticated(){
+  isAuthenticated() {
     return this._store.logedInUser.getValue();
-  };
+  }
 }
