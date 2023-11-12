@@ -8,9 +8,14 @@
       </div>
     </div>
 
-    <span class="user-view" title="view app as a user">
-      <i class="bi bi-person-video3"></i>
-    </span>
+    <div class="user-actions">
+      <span class="user-view action-button" title="add user" (click)="showAddEditUserModal = true">
+        <i class="bi bi-person-fill-add"></i>
+      </span>
+      <span class="user-view" title="view app as a user">
+        <i class="bi bi-person-video3"></i>
+      </span>
+    </div>
   </div>
 
   <table class="table table-striped">
@@ -44,9 +49,11 @@
           {{user.phone}}
         </td>
         <td>
-          <app-user-actions [selectedUser]="user"></app-user-actions>
+          <app-user-actions (refreshList)="filterUsers()" [selectedUser]="user"></app-user-actions>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<app-add-edit-user [showAddEditUserModal]="showAddEditUserModal" (closePopup)="closeAddEditUser()"></app-add-edit-user>

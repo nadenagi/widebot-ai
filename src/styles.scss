@@ -163,3 +163,15 @@ table {
   background-size: contain;
   display: inline-block;
 }
+
+.modal {
+  display: block !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transition: all .3s !important;
+
+  &.show {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}

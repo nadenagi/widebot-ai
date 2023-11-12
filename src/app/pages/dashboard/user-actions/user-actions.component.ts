@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RawUsers } from 'src/app/shared/types/user';
 
 @Component({
@@ -8,11 +8,13 @@ import { RawUsers } from 'src/app/shared/types/user';
 })
 export class UserActionsComponent {
   @Input('selectedUser') selectedUser!: RawUsers;
+  @Output() refreshList = new EventEmitter();
   deleteUserModal: boolean = false;
+  showAddEditUserModal: boolean = false;
 
-  addUser() {}
-  editUser() {}
-  deleteUser() {   
-    this.deleteUserModal = true;
+  closeModalsAndRefresh() {
+    this.deleteUserModal = false;
+    this.showAddEditUserModal = false;
+    this.refreshList.emit();
   }
 }

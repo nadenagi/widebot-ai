@@ -30,6 +30,7 @@
             "styles": [
               "src/styles.scss",
               "src/assets/styles/variables.scss",
+              "src/assets/styles/forms.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
