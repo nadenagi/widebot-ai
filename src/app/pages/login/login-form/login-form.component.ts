@@ -42,7 +42,14 @@ export class LoginFormComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       let user = this._auth.checkUserExist(this.loginForm.value);
-      user ? this._store.userLogin(user) : (this.failedLogin = true);
+      if (user) {
+        this._store.userLogin(user);
+        user.accessLevel == 'admin'
+          ? this.router.navigateByUrl('pages/dashboard')
+          : this.router.navigateByUrl('pages/user');
+      } else {
+        this.failedLogin = true;
+      }
       this.loading = false;
     }, 1000);
   }
