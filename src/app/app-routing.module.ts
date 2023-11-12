@@ -6,7 +6,7 @@ import { PagesComponent } from './pages/pages.component';
 import { ngxPermissionsGuard } from 'ngx-permissions';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/pages', pathMatch: 'full' },
+  { path: '', redirectTo: '/pages/user', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   {
     path: 'pages',

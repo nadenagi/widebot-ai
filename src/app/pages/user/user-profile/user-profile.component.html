@@ -1,1 +1,16 @@
-<p>user-profile works!</p>
+<div class="user-profile-container">
+  <div class="cover-image">
+    <img src="/assets/images/profileBG.jpg" alt="">
+    <div class="overflow"></div>
+    <div class="user-profile-pic">
+      <img src="/assets/images/profilepic.jpg" alt="">
+    </div>
+  </div>
+  <div *ngIf="editMode; else profileMode">
+    <app-edit-profile></app-edit-profile>
+  </div>
+
+  <ng-template #profileMode>
+    <app-profile-details (editProfile)="editMode = true"></app-profile-details>
+  </ng-template>
+</div>

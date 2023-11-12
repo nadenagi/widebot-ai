@@ -1,0 +1,32 @@
+<div class="profile-sections p-4">
+  <div class="user-details mb-3">
+    <div class="user-info">
+      <div class="info-title">Email</div>
+      <div class="info-value">{{loggedInUser.email}}</div>
+    </div>
+    <div class="user-info">
+      <div class="info-title">User Level</div>
+      <div class="info-value">{{loggedInUser.accessLevel}}</div>
+    </div>
+    <div class="user-info">
+      <div class="info-title">Address</div>
+      <div class="info-value">{{loggedInUser.address.city}}</div>
+    </div>
+    <div class="user-info">
+      <div class="info-title">Company</div>
+      <div class="info-value">{{loggedInUser.company.name}}</div>
+    </div>
+    <div class="user-info">
+      <div class="info-title">Name</div>
+      <div class="info-value">{{loggedInUser.name}}</div>
+    </div>
+    <div class="user-info">
+      <div class="info-title">Phone</div>
+      <div class="info-value">{{loggedInUser.phone}}</div>
+    </div>
+  </div>
+
+  <div class="edit-profile">
+    <div class="edit-button btn btn-primary" (click)="editProfilefn()">Edit Profile</div>
+  </div>
+</div>

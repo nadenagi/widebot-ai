@@ -1,0 +1,42 @@
+.user-profile-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  .cover-image {
+    width: 100%;
+    position: relative;
+    margin-bottom: 120px;
+
+    img {
+      width: 100%;
+    }
+
+    .overflow{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #00000069;
+      z-index: 1;
+      top: 0;
+    }
+
+    .user-profile-pic{
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      overflow: hidden;
+      bottom: -75px;
+      left: 50px;
+      z-index: 2;
+  
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  
+}
