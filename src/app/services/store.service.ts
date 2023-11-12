@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class StoreService {
   logedInUser = new BehaviorSubject({
+    id: '1',
     email: 'user@widebotai.com',
     password: 'User@1234',
     accessLevel: 'user',
@@ -41,6 +42,7 @@ export class StoreService {
 
   logoutUser() {
     this.logedInUser.next({
+      id: '',
       email: '',
       password: '',
       accessLevel: '',

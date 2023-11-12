@@ -31,6 +31,7 @@ export class AuthService {
       phone: '1-770-736-8031 x56442',
       username: 'Bret',
       website: 'hildegard.org',
+      id: '1'
     },
     {
       email: 'admin@widebotai.com',
@@ -55,6 +56,7 @@ export class AuthService {
       phone: '1-770-736-8031 x56442',
       username: 'Bret',
       website: 'hildegard.org',
+      id: '2'
     },
   ];
 

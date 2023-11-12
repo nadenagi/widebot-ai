@@ -4,6 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "widebot-ai": {
+      "i18n": {"sourceLocale":"en-US","locales": {"ar":{"translation":"src/locale/messages.ar.xlf"}}},
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,6 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/widebot-ai",
             "index": "src/index.html",
             "main": "src/main.ts",

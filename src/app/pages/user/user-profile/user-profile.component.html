@@ -1,13 +1,13 @@
 <div class="user-profile-container">
   <div class="cover-image">
-    <img src="/assets/images/profileBG.jpg" alt="">
+    <img src="/assets/images/profileBG.jpg" alt="banner">
     <div class="overflow"></div>
     <div class="user-profile-pic">
-      <img src="/assets/images/profilepic.jpg" alt="">
+      <img src="/assets/images/profilepic.jpg" alt="profile pic">
     </div>
   </div>
   <div *ngIf="editMode; else profileMode">
-    <app-edit-profile></app-edit-profile>
+    <app-edit-profile (cancelEdit)="editMode = false"></app-edit-profile>
   </div>
 
   <ng-template #profileMode>

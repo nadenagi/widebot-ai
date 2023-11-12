@@ -1,12 +1,12 @@
 <div class="nav-bar-container">
   <div class="navbar">
     <div class="logo">
-      <img src="./assets/images/logo.svg" alt="logo">
+      <img src="./assets/images/logo.svg" alt="logo" i18n-alt>
     </div>
     <div class="actions">
-      <div class="action-button" [routerLink]="['/']">Home</div>
+      <div class="action-button" [routerLink]="['/']" i18n>Home</div>
       <div class="action-button" (click)="switchLanguage()">{{languge == 'en' ? 'AR' : 'EN'}}</div>
     </div>
-    <div class="action-button logout" (click)="logout()">Logout</div>
+    <div class="action-button logout" (click)="logout()" i18n>Logout</div>
   </div>
 </div>

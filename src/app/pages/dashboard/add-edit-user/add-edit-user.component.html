@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Choose Your File</h5>
+        <h5 class="modal-title" id="exampleModalLabel" i18n>Add edit user</h5>
         <button (click)="closePopupfn()" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -10,7 +10,7 @@
       <div class="modal-body">
         <form [formGroup]="userForm">
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email" i18n>Email</label>
             <input formControlName="email" type="email" name="email" id="email" aria-describedby="emailHelp"
               placeholder="Enter email" [ngClass]="{'is-invalid':userForm.controls['email'].invalid &&
         (userForm.controls['email'].dirty ||
@@ -20,14 +20,14 @@
                 (userForm.controls['email'].dirty ||
                   userForm.controls['email'].touched)
               " class="invalid-feedback">
-              <div *ngIf="userForm.controls['email'].errors?.['required']">
+              <div *ngIf="userForm.controls['email'].errors?.['required']" i18n>
                 email is required.
               </div>
             </div>
           </div>
   
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name" i18n>Name</label>
             <input formControlName="name" type="text" name="name" id="name" aria-describedby="nameHelp"
               placeholder="Enter name" [ngClass]="{'is-invalid':userForm.controls['name'].invalid &&
         (userForm.controls['name'].dirty ||
@@ -37,14 +37,14 @@
                 (userForm.controls['name'].dirty ||
                   userForm.controls['name'].touched)
               " class="invalid-feedback">
-              <div *ngIf="userForm.controls['name'].errors?.['required']">
+              <div *ngIf="userForm.controls['name'].errors?.['required']" i18n>
                 Name is required.
               </div>
             </div>
           </div>
   
           <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username" i18n>Username</label>
             <input formControlName="username" type="text" name="username" id="username"
               aria-describedby="usernameHelp"
               placeholder="Enter username" [ngClass]="{'is-invalid':userForm.controls['username'].invalid &&
@@ -55,14 +55,14 @@
                 (userForm.controls['username'].dirty ||
                   userForm.controls['username'].touched)
               " class="invalid-feedback">
-              <div *ngIf="userForm.controls['username'].errors?.['required']">
+              <div *ngIf="userForm.controls['username'].errors?.['required']" i18n>
                 Username is required.
               </div>
             </div>
           </div>
   
           <div class="form-group">
-            <label for="phone">Phone</label>
+            <label for="phone" i18n>Phone</label>
             <input formControlName="phone" type="tel" name="phone" id="phone"
               aria-describedby="phonemeHelp" placeholder="Enter phone"
               [ngClass]="{'is-invalid':userForm.controls['phone'].invalid &&
@@ -73,7 +73,7 @@
                 (userForm.controls['phone'].dirty ||
                   userForm.controls['phone'].touched)
               " class="invalid-feedback">
-              <div *ngIf="userForm.controls['phone'].errors?.['required']">
+              <div *ngIf="userForm.controls['phone'].errors?.['required']" i18n>
                 Phone is required.
               </div>
             </div>
@@ -82,15 +82,15 @@
       </div>
       <div class="modal-footer">
         <button type="submit" (click)="updateUser()" class="btn btn-primary" data-dismiss="modal"
-          *ngIf="selectedUser; else addButton">
+          *ngIf="selectedUser; else addButton" i18n>
           update
         </button>
         <ng-template #addButton>
-          <button type="submit" (click)="addUser()" class="btn btn-primary" data-dismiss="modal">
+          <button type="submit" (click)="addUser()" class="btn btn-primary" data-dismiss="modal" i18n>
             add
           </button>
         </ng-template>
-        <button (click)="closePopupfn()" type="button" data-dismiss="modal" class="btn btn-outline-danger">
+        <button (click)="closePopupfn()" type="button" data-dismiss="modal" class="btn btn-outline-danger" i18n>
           cancel
         </button>
       </div>

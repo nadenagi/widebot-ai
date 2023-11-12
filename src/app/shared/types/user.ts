@@ -8,6 +8,7 @@ export type usersPredefinedCredentials = {
   phone: string;
   username: string;
   website: string;
+  id: string;
 };
 
 type Address = {
