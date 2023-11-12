@@ -1,0 +1,21 @@
+.action-table{
+  width: 100%;
+  background: #ffffff;
+  border-radius: 1rem;
+
+  .actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .user-view{
+      font-size: 30px;
+      transition: color .3s;
+      cursor: pointer;
+
+      &:hover{
+        color: var(--form-control-color);
+      }
+    }
+  }
+}

@@ -12,6 +12,7 @@ import { AdminModule } from './pages/dashboard/admin.module';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { PagesModule } from './pages/pages.module';
+import { UserService } from './services/users';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, LoginFormComponent],
@@ -26,6 +27,7 @@ import { PagesModule } from './pages/pages.module';
   providers: [
     AuthService,
     AuthGuard,
+    UserService,
     importProvidersFrom(NgxPermissionsModule.forRoot()),
   ],
   bootstrap: [AppComponent],

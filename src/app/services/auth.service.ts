@@ -35,7 +35,8 @@ export class AuthService {
   getProfile(): usersPredefinedCredentials {
     let storedUser = this._store.logedInUser
       .value as usersPredefinedCredentials;
-    return storedUser;
+    return this.predefinedUsers[1];
+    // return storedUser;
   }
 
   isAuthenticated() {
