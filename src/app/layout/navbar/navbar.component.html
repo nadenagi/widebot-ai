@@ -1,1 +1,12 @@
-<p>navbar works!</p>
+<div class="nav-bar-container">
+  <div class="navbar">
+    <div class="logo">
+      <img src="./assets/images/logo.svg" alt="logo">
+    </div>
+    <div class="actions">
+      <div class="action-button" [routerLink]="['/']">Home</div>
+      <div class="action-button" (click)="switchLanguage()">{{languge == 'en' ? 'AR' : 'EN'}}</div>
+    </div>
+    <div class="action-button logout" (click)="logout()">Logout</div>
+  </div>
+</div>
